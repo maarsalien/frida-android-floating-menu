@@ -396,7 +396,7 @@ export default class Menu {
     seekBar.setMax((max - min) / step);
     if (Build$VERSION.SDK_INT.value >= Build$VERSION_CODES.O.value) seekBar.setMin(0);
     seekBar.setPadding(35, 10, 35, 10);
-    seekBar.setProgress(value.get());
+    seekBar.setProgress((value.get() - min) / step);
     seekBar.getThumb().setColorFilter(this.config.SEEKBAR_COLOR, PorterDuff$Mode.SRC_ATOP.value);
     seekBar.getProgressDrawable().setColorFilter(this.config.SEEKBAR_PROGRESS_COLOR, PorterDuff$Mode.SRC_ATOP.value);
 
